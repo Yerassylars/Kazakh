@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Сабақ материалдары — Қазақша</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+  </header>
+
+  <nav class="subject-nav">
+    <button class="subject-btn active" data-subject="kazakh_tili">Қазақ тілі</button>
+    <button class="subject-btn" data-subject="kazakh_adibeti">Қазақ әдебиеті</button>
+    <button id="open-add" class="add-btn">Тақырыпты қосу</button>
+  </nav>
+
+  <main class="main">
+    <div class="themes-nav" id="themes-nav">
+      <!-- Кнопки тем будут вставлены тут -->
+    </div>
+
+    <section id="materials-list" class="materials-list">
+      <!-- Материалы с темой будут вставлены тут -->
+    </section>
+  </main>
+
+  <div id="add-modal" class="modal hidden">
+    <form id="add-form" class="modal-content">
+      <h2>Материалдары бар тақырыпты қосу</h2>
+      <label>Пән
+        <select name="subject">
+          <option value="kazakh_tili">Қазақ тілі</option>
+          <option value="kazakh_adibeti">Қазақ әдебиеті</option>
+        </select>
+      </label>
+      <label>Тақырып атауы (міндетті)
+        <input name="theme" required />
+      </label>
+      <label>Тақырып сипаттамасы
+        <textarea name="description" placeholder="Тақырыптың қысқа сипаттамасы"></textarea>
+      </label>
+
+      <div class="materials-fields">
+        <h4>Осы тақырып үшін материалдар (бос қалдырсаңыз болады)</h4>
+        
+        <label>Презентация (PDF немесе файл)
+          <input name="presentation_file" type="file" accept=".pdf,.ppt,.pptx">
+        </label>
+
+        <label>Видео (YouTube URL немесе файл)
+          <input name="video_url" placeholder="https://www.youtube.com/watch?v=...">
+          <input name="video_file" type="file" accept="video/*">
+        </label>
+
+        <label>Комикс (сурет)
+          <input name="comic_file" type="file" accept="image/*">
+        </label>
+
+        <label>Сауалнамалар (пішіндік/тест сілтемесі)
+          <input name="questions_url" placeholder="https://example.com/questions">
+        </label>
+
+        <label>Қосымша сілтемелер
+          <input name="links_url" placeholder="https://example.com">
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit">Тақырыпты сақтау</button>
+        <button type="button" id="cancel-add">Болдырмау</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
